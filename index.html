@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tyyli.css">
+    <title>Kahvitauko</title>
+    
+</head>
+<body>
+
+    <div class="slot-machine">
+        <header>
+            <h1>KAHVITAUKO</h1>
+        </header>
+        <div class="reels-container">
+
+            <div class="reel" id="reel1">🥧</div>
+            <div class="reel" id="reel2">🥧</div>
+            <div class="reel" id="reel3">🥧</div>
+            <div class="reel" id="reel4">🥧</div>
+        </div>
+
+        <div class="reels-container">
+
+            <button id="lock1" onclick="toggleLock(1)">LUKITSE</button>
+            <button id="lock2" onclick="toggleLock(2)">LUKITSE</button>
+            <button id="lock3" onclick="toggleLock(3)">LUKITSE</button>
+            <button id="lock4" onclick="toggleLock(4)">LUKITSE</button><br><br>
+        </div><br>
+
+        <div class="bet-container">
+            <label for="betInput">Aseta panos</label><br>
+            <input type="number" id="betInput" min="1" value="1">
+        </div>
+
+        <button onclick="spin()">Pyöräytä</button>
+        <p id="winnings">VOITOT</p>
+        <p id="balance">Saldo: 100</p>
+        <p id="rounds"></p>
+        <p id="lockedRounds"></p>
+
+        <div class="info">
+            <h3>Voittotaulukko</h3>
+            <table>
+                <tr>
+                    <td>☕☕☕☕</td>
+                    <td>10 x panos</td>
+                </tr>
+                <tr>
+                    <td>🍩🍩🍩🍩</td>
+                    <td>6 x panos</td>
+                </tr>
+                <tr>
+                    <td>🍪🍪🍪🍪</td>
+                    <td>5 x panos</td>
+                </tr>
+                <tr>
+                    <td>🍫🍫🍫🍫</td>
+                    <td>4 x panos</td>
+                </tr>
+                <tr>
+                    <td>🧁🧁🧁🧁</td>
+                    <td>3 x panos</td>
+                </tr>
+                <tr>
+                    <td>☕☕☕</td>
+                    <td>5 x panos</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
+    <script src="peli.js"></script>
+</body>
+</html>

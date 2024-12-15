@@ -1,0 +1,110 @@
+body {
+    color:rgb(233, 23, 205);
+    display: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("tausta1.png");
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+
+}
+
+header {
+    color: rgb(233, 23, 205);
+    text-align: center;
+    padding: 3px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+input[type=number] {
+    width: 100px;
+    padding: 12px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    color:rgb(233, 23, 205);
+    font-size: 1.5em;
+    font-family: Lato, sans-serif;
+    border-color:  goldenrod;
+}
+
+.slot-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.reels-container {
+    display: flex;
+    justify-content:space-around;
+}
+
+.bet-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.reel {
+    width: 100px;
+    height: 120px;
+    border: 3px solid goldenrod;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    background-color: rgba(250, 243, 243, 0.938);
+
+}
+
+button {
+    font-size: 18px;
+    width: 105px;
+    height: 30px;
+    margin: 5px;
+    border: 3px solid goldenrod;
+    background-color:rgb(240, 204, 231);
+    border-radius: 20px;
+    cursor: grab;
+}
+
+
+.info {
+    font-size: 20px;
+    margin-bottom: 25px;
+    width: 600px;
+    height: 280px;
+    background-color: rgb(240, 204, 231);
+    padding: 5px;
+    border: 5px goldenrod solid;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+th {
+    padding: 3px;
+}
+
+td {
+    padding: 3px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .reels-container {
+        flex-direction: auto;
+    }
+
+    .reel {
+        width: 100%;
+    }
+}
+

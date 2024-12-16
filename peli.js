@@ -3,6 +3,7 @@ let balance = 100;
 let lockedReels = [false, false, false, false];
 let winnings = 0;
 let currentRound = 0;
+let lastWinRound = -1;
 
 function spin() {
     currentRound++;
@@ -43,6 +44,11 @@ function spin() {
     updateBalance();
     updateWinnings();
 
+    // Jos voitto on suurempi kuin 0, päivitä viimeisin voittokierros
+    if (winAmount > 0) {
+        lastWinRound = currentRound;
+    }
+
     // Vapautetaan rullien lukitukset ja palautetaan painikkeet automaattisesti
     resetLockButtons();
 }
@@ -53,15 +59,17 @@ function toggleLock(reelIndex) {
     const reel = document.getElementById(`reel${reelIndex - 1}`);
 
     if (!lockedReels[reelIndex - 1]) {
-        lockedReels[reelIndex - 1] = true;
-        lockButton.textContent = 'LUKITTU';
-        reel.classList.add('locked');
-        
+        if (currentRound % 2 === 0 && currentRound !== lastWinRound + 1) {
+            lockedReels[reelIndex - 1] = true;
+            lockButton.textContent = 'LUKITTU';
+            reel.classList.add('locked');
+        } else {
+            alert('Rullien lukitus mahdollista vain joka toinen kierros, paitsi voittokierroksen jälkeen ei voi lukita.');
+        }
     } else {
         alert('Pyöräytä välillä!');
     } 
 } 
-
 
 function resetLockButtons() {
     for (let i = 1; i <= 4; i++) {
